@@ -1,15 +1,16 @@
 import axios from "axios";
 
 
+
 interface Location{
     street: string
     district: string
     town: string
-    countryDistrict: string
+    county?: string
 }
 
 
-interface Event{
+export interface SingleEvent {
     eventID: string
     name: string
     start: string
@@ -18,11 +19,13 @@ interface Event{
     location: Location
 }
 export interface ListOfEvents{
-    content: Event[]
+    content: SingleEvent[]
 }
 
 
 
-export const callEvents = (street:String) => {
-    return axios.post("/getEvents/" + street)
+export const callEvents = () => {
+    return axios.get("")
+        .then(res => console.log(res.data))
+
 }

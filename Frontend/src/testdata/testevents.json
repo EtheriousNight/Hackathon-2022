@@ -1,0 +1,28 @@
+{
+  "content":[
+    {
+      "eventID": "1",
+      "name": "Straßenreinigung",
+      "start": "25.10.22 07:00",
+      "end": "25.10.22 13:00",
+      "location": {
+        "street": "Bahnhofstraße",
+        "district": "Innenstadt",
+        "town": "Görlitz",
+        "countryDistrict": "LandkreisGörlitz"
+      }
+    },
+    {
+      "eventID": "2",
+      "name": "Straßenreinigung",
+      "start": "25.10.22 07:00",
+      "end": "25.10.22 13:00",
+      "location": {
+        "street": "Bahnhofstraße",
+        "district": "Innenstadt",
+        "town": "Görlitz",
+        "countryDistrict": "LandkreisGörlitz"
+      }
+    }
+  ]
+}
