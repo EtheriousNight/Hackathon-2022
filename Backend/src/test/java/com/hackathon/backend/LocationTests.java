@@ -5,6 +5,7 @@ import io.restassured.http.ContentType;
 import net.minidev.json.parser.JSONParser;
 import net.minidev.json.parser.ParseException;
 import net.minidev.json.JSONObject;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -45,8 +46,20 @@ public class LocationTests {
 
     @Test
     void getLocationById() throws ParseException {
+
         var newLocationId = createLocation();
-        System.out.println(newLocationId);
+        var getPath = "api/v1/location/get/" + newLocationId.toString();
+        var getResponse = RestAssured.given()
+                .when()
+                .get(getPath);
+
+        getResponse.then().statusCode(200);
+
+        var getContent = (JSONObject) new JSONParser(JSONParser.DEFAULT_PERMISSIVE_MODE).parse(getResponse.body().asString());
+        var getId = (Integer) getContent.get("id");
+
+        Assertions.assertEquals(newLocationId, getId);
+
     }
 
 }
