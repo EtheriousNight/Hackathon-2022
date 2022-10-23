@@ -21,8 +21,9 @@ export const StartPage = () => {
                 variant={"contained"}
                 onClick={onSubmitStreet}
             >
-                submit
+                get Street
             </Button>
+            <br/>
             <TextField
                 required
                 id="outlined-required"
@@ -34,23 +35,16 @@ export const StartPage = () => {
                 variant={"contained"}
                 onClick={onSubmitDistrict}
             >
-                submit
+                get District
             </Button>
-            <TextField
-                required
-                id="outlined-required"
-                label="Required"
-                placeholder={"city name"}
-                onChange={(e: any) => inputContext.setCity(e.target.value)}
-            />
             <Button
                 variant={"contained"}
                 onClick={onSubmitCity}
             >
-                submit
+                get City
             </Button>
             <br/>
-            <EventTable/>
+            {/*<EventTable/>*/}
         </div>
     )
 }

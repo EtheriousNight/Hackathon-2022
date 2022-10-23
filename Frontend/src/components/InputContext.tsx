@@ -19,7 +19,7 @@ const SampleContext: InputContextInterface = {
     setDistrict: () => {},
     city: "",
     setCity: () => {},
-    location: 1,
+    location: 0,
     setLocation: () => {}
 }
 
@@ -35,7 +35,7 @@ export const InputContextProvider = (props: InputContextProviderProps) => {
     const [street, setStreet] = useState<string>("");
     const [district, setDistrict] = useState<string>("");
     const [city, setCity] = useState<string>("");
-    const [location, setLocation] = useState<number>(1)
+    const [location, setLocation] = useState<number>(0)
 
     const inputContext: InputContextInterface = {
         street: street,
