@@ -53,16 +53,37 @@ public class EventService {
         return eventRepository.findEventsByStreet(street);
     }
 
-    public List<Event> getEventsByCityDistrict(String cityDistrict) {
-        return eventRepository.findEventsByCityDistrict(cityDistrict);
+    public List<Event> getEventsByCityDistrict(String street) {
+        var optionalLocation = locationRepository.findLocationByStreet(street);
+        if (optionalLocation.isEmpty()) {
+            throw new LocationNotFoundException("Location with street " + street + " could not be found");
+        } else {
+            var location = optionalLocation.get();
+            var cityDistrict = location.getCityDistrict();
+            return eventRepository.findEventsByCityDistrict(cityDistrict);
+        }
     }
 
-    public List<Event> getEventsByCity(String city) {
-        return eventRepository.findEventsByCity(city);
+    public List<Event> getEventsByCity(String street) {
+        var optionalLocation = locationRepository.findLocationByStreet(street);
+        if (optionalLocation.isEmpty()) {
+            throw new LocationNotFoundException("Location with street " + street + " could not be found");
+        } else {
+            var location = optionalLocation.get();
+            var city = location.getCity();
+            return eventRepository.findEventsByCity(city);
+        }
     }
 
-    public List<Event> getEventsByCounty(String county) {
-        return eventRepository.findEventsByCounty(county);
+    public List<Event> getEventsByCounty(String street) {
+        var optionalLocation = locationRepository.findLocationByStreet(street);
+        if (optionalLocation.isEmpty()) {
+            throw new LocationNotFoundException("Location with street " + street + " could not be found");
+        } else {
+            var location = optionalLocation.get();
+            var county = location.getCity();
+            return eventRepository.findEventsByCounty(county);
+        }
     }
 
 }

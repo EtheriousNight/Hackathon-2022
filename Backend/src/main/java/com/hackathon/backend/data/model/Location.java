@@ -26,6 +26,13 @@ public class Location {
 
     }
 
+    public Location(String street, String cityDistrict, String city, String county) {
+        this.street = street;
+        this.cityDistrict = cityDistrict;
+        this.city = city;
+        this.county = county;
+    }
+
     public Long getId() {
         return id;
     }

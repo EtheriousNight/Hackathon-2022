@@ -183,4 +183,20 @@ public class EventTests {
 
     }
 
+    @Test
+    void createdDataTest() throws ParseException {
+
+        var address = "Schlesische Straße";
+        var getPath = "api/v1/event/get/city/" + address;
+        var getResponse = RestAssured.given()
+                .when()
+                .get(getPath);
+
+        getResponse.then().statusCode(200);
+        var getContent = (JSONArray) new JSONParser(JSONParser.DEFAULT_PERMISSIVE_MODE).parse(getResponse.body().asString());
+
+        System.err.println(getContent.toJSONString());
+
+    }
+
 }

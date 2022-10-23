@@ -26,6 +26,12 @@ public class Event {
 
     }
 
+    public Event(String name, String start, String ending) {
+        this.name = name;
+        this.start = start;
+        this.ending = ending;
+    }
+
     public Long getId() {
         return id;
     }

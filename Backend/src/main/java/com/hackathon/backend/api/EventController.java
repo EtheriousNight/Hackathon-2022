@@ -39,19 +39,19 @@ public class EventController {
         return eventService.getEventsByStreet(street);
     }
 
-    @GetMapping("/get/district/{cityDistrict}")
-    public List<Event> getEventsByCityDistrict(@PathVariable String cityDistrict) {
-        return eventService.getEventsByCityDistrict(cityDistrict);
+    @GetMapping("/get/district/{street}")
+    public List<Event> getEventsByCityDistrict(@PathVariable String street) {
+        return eventService.getEventsByCityDistrict(street);
     }
 
-    @GetMapping("/get/city/{city}")
-    public List<Event> getEventsByCity(@PathVariable String city) {
-        return eventService.getEventsByCity(city);
+    @GetMapping("/get/city/{street}")
+    public List<Event> getEventsByCity(@PathVariable String street) {
+        return eventService.getEventsByCity(street);
     }
 
-    @GetMapping("/get/county/{county}")
-    public List<Event> getEventsByCounty(@PathVariable String county) {
-        return eventService.getEventsByCounty(county);
+    @GetMapping("/get/county/{street}")
+    public List<Event> getEventsByCounty(@PathVariable String street) {
+        return eventService.getEventsByCounty(street);
     }
 
 }
