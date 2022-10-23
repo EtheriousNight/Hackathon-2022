@@ -8,7 +8,6 @@
         <div class="col s1" />
         <div class="col s10">
             <SearchBar />
-            <EventList />
         </div>
         <div class="col s1" />
     </div>

@@ -86,4 +86,8 @@ public class EventService {
         }
     }
 
+    public List<Event> getEventsByCityDistrictOnly(String district) {
+        return eventRepository.findEventsByCityDistrict(district);
+    }
+
 }

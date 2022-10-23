@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin
 @RestController
+@CrossOrigin(origins = "*",  maxAge = 3600)
 @RequestMapping(path = "api/v1/event")
 public class EventController {
 
@@ -42,6 +42,11 @@ public class EventController {
     @GetMapping("/get/district/{street}")
     public List<Event> getEventsByCityDistrict(@PathVariable String street) {
         return eventService.getEventsByCityDistrict(street);
+    }
+
+    @GetMapping("/get/only/district/{district}")
+    public List<Event> getEventsByCityDistrictOnly(@PathVariable String district) {
+        return eventService.getEventsByCityDistrictOnly(district);
     }
 
     @GetMapping("/get/city/{street}")

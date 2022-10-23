@@ -6,7 +6,7 @@ export type Event = {
 }
 
 async function getRequest(urlAddition, street): Promise<Event[]> {
-    const url = "http://localhost:8089/api/v1/get/" + urlAddition + "/" + street;
+    const url = "http://localhost:8089/api/v1/event/get/" + urlAddition + "/" + street;
     let response = await fetch(url, {
         method: "GET",
         headers: {
@@ -25,7 +25,7 @@ export async function getStreetEvents(street: string): Promise<Event[]> {
 }
 
 export async function getCityDistrictEvents(street: string): Promise<Event[]> {
-    return await getRequest("cityDistrict", street);
+    return await getRequest("district", street);
 }
 
 export async function getCityEvents(street: string): Promise<Event[]> {

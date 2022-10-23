@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin
 @RestController
+@CrossOrigin(origins = "*",  maxAge = 3600)
 @RequestMapping(path = "api/v1/location")
 public class LocationController {
 
