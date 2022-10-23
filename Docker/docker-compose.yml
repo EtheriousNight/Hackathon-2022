@@ -2,6 +2,13 @@ version: '2'
 
 services:
 
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: dockerfile
+    ports:
+      - "4000:80"
+
   backend:
     build:
       context: ./backend

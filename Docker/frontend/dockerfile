@@ -1,0 +1,6 @@
+FROM nginx:alpine
+
+RUN mkdir app
+WORKDIR /app
+
+COPY ./dist /usr/share/nginx/html
